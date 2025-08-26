@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Jornal do Futuro]]></title>
+        <description><![CDATA[Um jornal político para todo o Brasil.]]></description>
+        <link>https://jornalofuturo.com.br</link>
+        <image>
+            <url>https://jornalofuturo.com.br/favicon.png</url>
+            <title>Jornal do Futuro</title>
+            <link>https://jornalofuturo.com.br</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Tue, 26 Aug 2025 03:26:59 GMT</lastBuildDate>
+        <atom:link href="https://oluis-antonio.github.io/feed-jornalofuturo/feed.xml" rel="self" type="application/rss+xml"/>
+        <language><![CDATA[pt-BR]]></language>
+        <item>
+            <title><![CDATA[Greve dos médicos em Salvador: luta contra pejotização]]></title>
+            <description><![CDATA[Pejotização avança na Bahia e médicos alertam para risco à saúde e aos direitos trabalhistas.]]></description>
+            <link>https://jornalofuturo.com.br/artigo/ijP86a-greve-dos-medicos-em-salvador-luta-contra-pejotizacao</link>
+            <guid isPermaLink="false">ijP86a</guid>
+            <pubDate>Mon, 25 Aug 2025 21:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Greve política dos taxistas em Angola]]></title>
+            <description><![CDATA[Petróleo, sangue e lucro: o que move a máquina de repressão estatal na Greve dos Taxistas de Angola.]]></description>
+            <link>https://jornalofuturo.com.br/artigo/VbKfAI-greve-politica-dos-taxistas-em-angola</link>
+            <guid isPermaLink="false">VbKfAI</guid>
+            <pubDate>Mon, 25 Aug 2025 18:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[PL da Devastação: vetos limitados, retrocessos mantidos]]></title>
+            <description><![CDATA[Os vetos propostos por Lula não evitam os retrocessos, pois o licenciamento ambiental segue enfraquecido e os biomas ameaçados, com base na lei aprovada.]]></description>
+            <link>https://jornalofuturo.com.br/artigo/1pDAJI-pl-da-devastacao-vetos-limitados-retrocessos-mantidos</link>
+            <guid isPermaLink="false">1pDAJI</guid>
+            <pubDate>Mon, 25 Aug 2025 15:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Aposentados e pensionistas da Petrobras protestam contra descontos na previdência e cobram diretoria da empresa]]></title>
+            <description><![CDATA[Os manifestantes elevaram o tom da cobrança para que a diretoria da Petrobras pague a dívida histórica que tem com o fundo de pensão de seus trabalhadores e que sejam encerrados os descontos do equacionamento da Petros.]]></description>
+            <link>https://jornalofuturo.com.br/artigo/4VKRV3-aposentados-e-pensionistas-da-petrobras-protestam-contra-descontos-na-previdencia-e-cobram-diretoria-da-empresa</link>
+            <guid isPermaLink="false">4VKRV3</guid>
+            <pubDate>Mon, 25 Aug 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Do Pará à China pelos trilhos da Ferrogrão]]></title>
+            <description><![CDATA[O papel estratégico da ferrovia na integração bioceânica e na expansão da fronteira agroexportadora e mineral.]]></description>
+            <link>https://jornalofuturo.com.br/artigo/wUHVjY-do-para-a-china-pelos-trilhos-da-ferrograo</link>
+            <guid isPermaLink="false">wUHVjY</guid>
+            <pubDate>Sun, 24 Aug 2025 21:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Enquanto Lula destina parte do Fundo do Pré-Sal para assistência estudantil, lucros ficam com monopólios]]></title>
+            <description><![CDATA[A mudança na distribuição de recursos não impacta o montante dos valores do Fundo Social. Na verdade, a lei faz parte de um conjunto de medidas anunciadas pelo governo, em acordo com o Congresso, que visam ajustar as contas públicas e cumprir com as metas fiscais.]]></description>
+            <link>https://jornalofuturo.com.br/artigo/Fyrzmp-enquanto-lula-destina-parte-do-fundo-do-pre-sal-para-assistencia-estudantil-lucros-ficam-com-monopolios</link>
+            <guid isPermaLink="false">Fyrzmp</guid>
+            <pubDate>Sun, 24 Aug 2025 15:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[EUA e China devem estender “trégua” na guerra comercial por mais 90 dias]]></title>
+            <description><![CDATA[As tréguas e negociações, portanto, não configuram soluções definitivas, mas sim momentos de respiro em um conflito estrutural e de longo prazo, marcado por assimetrias de poder e interesses incompatíveis.]]></description>
+            <link>https://jornalofuturo.com.br/artigo/8aJUUv-eua-e-china-devem-estender-tregua-na-guerra-comercial-por-mais-90-dias</link>
+            <guid isPermaLink="false">8aJUUv</guid>
+            <pubDate>Sat, 23 Aug 2025 21:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Privatização da DESO: Um ano de mercantilização e degradação do saneamento]]></title>
+            <description><![CDATA[Demissões, aumento de tarifa e problemas de infraestrutura e distribuição marcam o primeiro ano do saneamento privatizado.]]></description>
+            <link>https://jornalofuturo.com.br/artigo/PxEuts-privatizacao-da-deso-um-ano-de-mercantilizacao-e-degradacao-do-saneamento</link>
+            <guid isPermaLink="false">PxEuts</guid>
+            <pubDate>Sat, 23 Aug 2025 15:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Prefeito de São Bernardo do Campo (SP) é afastado por suspeita de corrupção]]></title>
+            <description><![CDATA[Operação da PF joga luz sobre uma intrincada rede composta por burgueses, mandatos e servidores públicos, dedicados a desviar dinheiro de contratos com a administração pública.]]></description>
+            <link>https://jornalofuturo.com.br/artigo/SdJggN-prefeito-de-sao-bernardo-do-campo-sp-e-afastado-por-suspeita-de-corrupcao</link>
+            <guid isPermaLink="false">SdJggN</guid>
+            <pubDate>Fri, 22 Aug 2025 21:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jones Manoel é ameaçado por neonazistas e responde: “Não temos tempo para ter medo!’]]></title>
+            <description><![CDATA[A ameaça, marcada por um discurso nazista e diversas ofensas racistas, foi recebida por e-mail e continha uma tentativa de extorsão e ameaças de morte. Dados pessoais e financeiros do militante também foram expostos na mensagem.]]></description>
+            <link>https://jornalofuturo.com.br/artigo/gt5e9v-jones-manoel-e-ameacado-por-neonazistas-e-responde-nao-temos-tempo-para-ter-medo</link>
+            <guid isPermaLink="false">gt5e9v</guid>
+            <pubDate>Fri, 22 Aug 2025 17:55:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
