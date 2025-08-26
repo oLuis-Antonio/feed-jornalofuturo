@@ -1,4 +1,4 @@
-name: update-feed
+name: Update Feed
 
 on:
   schedule:
