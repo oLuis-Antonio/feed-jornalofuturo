@@ -1,85 +1,10 @@
 import "dotenv/config";
 import RSS from "rss";
 import { writeFileSync } from "fs";
+import * as cheerio from "cheerio";
+import sanitizeHtml from "sanitize-html";
 
-function renderBody(node) {
-  if (!node) return "";
-
-  if (Array.isArray(node)) {
-    return node.map((n) => renderBody(n)).join("");
-  }
-
-  if (node.children && node.children.length > 0) {
-    return node.children.map((child) => renderBody(child)).join("");
-  }
-
-  switch (node.type) {
-    case "paragraph":
-      return `<p>${renderBody(node.children)}</p>`;
-    case "text": {
-      let text = node.text || "";
-      if (node.style === "bold") text = `<strong>${text}</strong>`;
-      if (node.style === "italic") text = `<em>${text}</em>`;
-      return text;
-    }
-    case "link": {
-      const url = node.fields?.url || "#";
-      return `<a href="${url}">${renderBody(node.children)}</a>`;
-    }
-    case "image": {
-      const src = node.fields?.src || node.url || "";
-      const alt = node.fields?.alt || node.altText || "";
-      return `<img src="${src}" alt="${alt}" />`;
-    }
-    case "list": {
-      const tag = node.ordered ? "ol" : "ul";
-      const items =
-        node.children?.map((li) => `<li>${renderBody(li)}</li>`).join("") || "";
-      return `<${tag}>${items}</${tag}>`;
-    }
-    case "listItem":
-      return renderBody(node.children);
-    case "lineBreak":
-      return "<br />";
-    default:
-      return "";
-  }
-}
-
-async function getPCBRdata() {
-  try {
-    const response = await fetch(`${process.env.API_URL}/article/list`);
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    const articles = await Promise.all(
-      data.docs.map(async (article) => {
-        const detailResp = await fetch(
-          `${process.env.API_URL}/article/details/${article.sqid}`
-        );
-        const detail = await detailResp.json();
-        const contentHtml = renderBody(detail.body.root);
-
-        return {
-          title: article.titleText,
-          description: article.snippetText,
-          date: article.publishDate,
-          url: `${process.env.BASE_URL}/artigo/${article.sqid}-${article.slug}`,
-          guid: article.sqid,
-          content: contentHtml,
-        };
-      })
-    );
-
-    return articles;
-  } catch (error) {
-    console.error(error.message);
-  }
-}
-
+// BASE RSS FEED
 const feed = new RSS({
   title: "Jornal do Futuro",
   description: "Um jornal político para todo o Brasil.",
@@ -89,19 +14,85 @@ const feed = new RSS({
   language: "pt-BR",
 });
 
+// FETCH DATA FROM "O FUTURO" API
+async function getPCBRdata() {
+  try {
+    const response = await fetch(`${process.env.API_URL}/article/list`);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return data.docs.map((article) => ({
+      title: article.titleText,
+      description: article.snippetText,
+      date: article.publishDate,
+      url: `${process.env.BASE_URL}/artigo/${article.sqid}-${article.slug}`,
+      guid: article.sqid,
+    }));
+  } catch (error) {
+    console.error(error.message);
+    return [];
+  }
+}
+
+async function getArticleContent(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Failed to fetch ${articleUrl}`);
+    const html = await response.text();
+
+    const $ = cheerio.load(html);
+    const rawContent = $(".text-body").html() || "";
+
+    const cleanContent = sanitizeHtml(rawContent, {
+      allowedTags: [
+        "p",
+        "br",
+        "strong",
+        "em",
+        "ul",
+        "ol",
+        "li",
+        "blockquote",
+        "code",
+        "pre",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "img",
+        "a",
+      ],
+      allowedAttributes: {
+        a: ["href", "title", "target"],
+        img: ["src", "alt", "title"],
+      },
+      allowedSchemes: ["http", "https", "mailto"],
+    });
+
+    return cleanContent;
+  } catch (error) {
+    console.error("Error fetching article content:", error.message);
+    return "";
+  }
+}
+
 async function generateFeedItems() {
   const articles = await getPCBRdata();
 
   for (const article of articles) {
+    const content = await getArticleContent(article.url);
     feed.item({
       title: article.title,
       description: article.description,
       url: article.url,
       guid: article.guid,
       date: article.date,
-      custom_elements: [
-        { "content:encoded": `<![CDATA[${article.content}]]>` },
-      ],
+      custom_elements: [{ "content:encoded": content }],
     });
   }
 }
