@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Generate RSS feed
-        run: node scripts/generateFeed.js
+        run: node src/index.js
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           API_URL: ${{ secrets.API_URL }}
