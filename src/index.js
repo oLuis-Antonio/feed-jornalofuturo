@@ -51,7 +51,7 @@ async function generateFeedItems() {
 
 async function generateFeed() {
   await generateFeedItems();
-  writeFileSync("./public/feed.xml", feed.xml({ indent: true }));
+  writeFileSync("./docs/feed.xml", feed.xml({ indent: true }));
 }
 
 generateFeed();
