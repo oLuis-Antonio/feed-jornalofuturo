@@ -6,7 +6,7 @@ import sanitizeHtml from "sanitize-html";
 
 // BASE RSS FEED
 const feed = new RSS({
-  title: "Jornal do Futuro",
+  title: "Jornal o Futuro",
   description: "Um jornal político para todo o Brasil.",
   feed_url: process.env.FEED_URL,
   site_url: process.env.BASE_URL,
